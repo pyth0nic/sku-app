@@ -1,6 +1,4 @@
-import { Store, createStore, applyMiddleware, compose } from "redux";
-
-// import createSagaMiddleware from "redux-saga";
+import { Store, createStore, applyMiddleware } from "redux";
 
 import thunk from "redux-thunk";
 
@@ -12,7 +10,8 @@ export default function configureStore(
   const store = createStore(
     createRootReducer(),
     initialState,
-    compose((window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk))
+    //compose((window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk))
+    applyMiddleware(thunk)
   );
   return store;
 }

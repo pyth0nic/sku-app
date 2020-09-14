@@ -59,6 +59,7 @@ export interface ShopifyProduct {
     variants: ProductVariant[];
     vendor: string;
 }
+
 export interface ShopifyProductEndpointsCountParams {
     vendor?: string;
     product_type?: string;

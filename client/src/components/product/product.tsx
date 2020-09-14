@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShopifyProduct } from '../../models/Product';
 import './product.scss';
-import logo from '../../logo.svg';
+import { startCase } from 'lodash';
 
 export interface ProductProps {
     product: ShopifyProduct;
@@ -13,7 +13,7 @@ export default function Product({ product }: ProductProps) {
     return (
         <div className="product">
             <div className="product-title">
-            <div>{product.handle} - {"Product Id"}</div>
+            <div>{startCase(product.handle)} - {product.id}</div>
             <div>{date.toISOString()}</div>
             </div>
             <div className="product-wrapper">
@@ -21,18 +21,19 @@ export default function Product({ product }: ProductProps) {
                 <div className="product-card">
                     <div className="product-stock">
                     <div className="sku">
-                        <p>Stock - {10} SKU ID</p>
+                        <p>Stock - {product.variants[0].inventory_quantity} SKU ID</p>
                     </div>
                     <div className="sku-info">
-                        <div className="title"><strong>${99} - {"desciprtion"}</strong></div>
-                        <p>{"lorem iptsum"}</p>
-                        <div><strong>{"Requires shipping"}</strong></div>
+                        <div className="title"><strong>${product.variants[0].price}</strong></div>
+                        <div style={{maxHeight:'4em', overflow: 'hidden'}} dangerouslySetInnerHTML={{ __html: product.body_html }}></div>
+                        <br/>
+                        <div><strong>{ product.variants[0].requires_shipping ? "Requires shipping" : ""}</strong></div>
                     </div>
                     </div>
                 </div>
                 </div>
                 <div className="product-picture">
-                <img src={logo} className="picture" alt="logo" />
+                <img src={product.images[0].src} className="picture" alt="logo" />
                 </div>
             </div>
         </div>
