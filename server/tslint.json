@@ -1,0 +1,18 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "indent": [ false, "tabs" ],
+        "trailing-comma": [ false ],
+        "object-literal-sort-keys": false
+    },
+    "linterOptions": {
+        "exclude": [
+            "src/**"
+        ]
+    },
+    "rulesDirectory": []
+}

@@ -1,0 +1,23 @@
+{
+    "type": "postgres",
+    "host": "",
+    "port": 5432,
+    "username": "postgres",
+    "password": "",
+    "database": "postgres",
+    "synchronize": true,
+    "logging": false,
+    "migrationsRun": true,
+    "autoLoadEntities": true,
+    "entities": [
+        "dist/entity/*.js"
+    ],
+    "migrations": [
+       "src/migrate/*.ts"
+    ],
+    "cli": {
+        "entitiesDir": "src/entity",
+        "migrationsDir": "src/migrate",
+        "subscribersDir": "src/subscriber"
+    }
+ }
