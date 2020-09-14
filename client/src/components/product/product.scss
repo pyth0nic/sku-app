@@ -1,0 +1,44 @@
+.product {
+    border: 2px solid #00B4CC;
+    width: 70%;
+    margin-top: 1em;
+    background: pink;
+    margin-left: auto;
+    margin-right: auto
+  }
+  
+  .product-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30em;
+    text-align: left;
+  }
+  
+  .product-title {
+    border-bottom: solid 2px  #00B4CC;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .sku {
+    border-bottom: solid 2px  #00B4CC;
+    min-width: 80%;
+  }
+  
+  .product-picture {
+    border-left: solid 2px #00B4CC;
+    pointer-events: none;
+  }
+  
+  .picture {
+    height: 20vmin;
+    pointer-events: none;
+  }
